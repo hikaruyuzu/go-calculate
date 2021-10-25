@@ -1,5 +1,10 @@
 package gocalculate
 
+import (
+	"fmt"
+	"strconv"
+)
+
 type CalculateArea interface {
 	WakeUpArea() int
 }
@@ -43,7 +48,9 @@ func (parallelogram Parallelogram) WakeUpArea() int {
 	return result
 }
 
-func GetArea(area CalculateArea) int {
+func GetArea(area CalculateArea) string {
 	result := area.WakeUpArea()
-	return result
+	resultStr := strconv.FormatInt(int64(result), 10)
+	finalResult := fmt.Sprintf("Result: %s \n", resultStr)
+	return finalResult
 }
