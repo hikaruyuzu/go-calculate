@@ -18,6 +18,11 @@ type Triangle struct {
 	Height int
 }
 
+type Parallelogram struct {
+	Base   int
+	Height int
+}
+
 func (rectangle Rectangle) WakeUpArea() int {
 	result := 2 * rectangle.Length * rectangle.Width
 	return result
@@ -30,6 +35,11 @@ func (sequare Sequare) WakeUpArea() int {
 
 func (triangle Triangle) WakeUpArea() int {
 	result := triangle.Base * triangle.Height / 2
+	return result
+}
+
+func (parallelogram Parallelogram) WakeUpArea() int {
+	result := parallelogram.Base * parallelogram.Height
 	return result
 }
 
